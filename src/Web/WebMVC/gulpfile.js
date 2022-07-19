@@ -93,7 +93,7 @@ function alljs(cb) {
 		.pipe(dest('wwwroot/css/select2/'));
 	src('node_modules/jquery/dist/*.js')
 		.pipe(dest('wwwroot/js/jquery/'));
-	src('node_modules/popper/umd/*.js')
+	src('node_modules/@popperjs/core/dist/umd/*.js')
 		.pipe(dest('wwwroot/js/popper/'));
 	src('node_modules/jquery-unveil/*.js')
 		.pipe(dest('wwwroot/js/jquery-unveil/'));
