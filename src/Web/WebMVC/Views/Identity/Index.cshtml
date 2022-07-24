@@ -7,7 +7,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
-    <title>Title</title>
+    <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
@@ -28,7 +28,7 @@
     <!-- Please remove the file below for production: Contains demo classes -->
     <link class="main-stylesheet" href="~/css/pages/style.min.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
-        window.onload = function () {
+        window.onload = function() {
             // fix for windows 8
             if (navigator.appVersion.indexOf("Windows NT 6.2") != -1)
                 document.head.innerHTML += '<link rel="stylesheet" type="text/css" href="~/css/pages/windows.chrome.fix.css" />'
@@ -40,8 +40,10 @@
     <div class="login-wrapper ">
         <div class="bg-pic">
             <div class="bg-caption pull-bottom sm-pull-bottom text-white p-l-20 m-b-20">
-                <h1 class="semi-bold text-white">Meet pages - The simplest and fastest way to build web UI for your
-                    dashboard or app.</h1>
+                <h1 class="semi-bold text-white">
+                    Meet pages - The simplest and fastest way to build web UI for your
+                    dashboard or app.
+                </h1>
                 <p class="small">
                     Our beautifully-designed UI Framework come with hundreds of customizable features. Every Layout is
                     just a starting point. ©2019-2020 All Rights Reserved. Pages® is a registered trademark of Revox
@@ -52,21 +54,21 @@
         <div class="login-container bg-white">
             <div class="p-l-50 p-r-50 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40">
                 <img src="assets/img/logo-48x48_c.png" alt="logo" data-src="assets/img/logo-48x48_c.png"
-                    data-src-retina="assets/img/logo-48x48_c@2x.png" width="48" height="48">
+                     data-src-retina="assets/img/logo-48x48_c@2x.png" width="48" height="48">
                 <h2 class="p-t-25">Get Started <br /> with your Dashboard</h2>
                 <p class="mw-80 m-t-5">Acesso</p>
-                <form id="form-login" class="p-t-15" role="form" action="index.html">
+                <form id="form-login" class="p-t-15" role="form" method="post" asp-controller="Identity" asp-action="Login">
                     <div class="form-group form-group-default">
                         <label>E-mail</label>
                         <div class="controls">
-                            @Html.TextBoxFor(_ => _.Email, new { @class = "form-control", required = true })
+                            @Html.TextBoxFor(_ => _.Email, new { @class = "form-control" })
                             @Html.ValidationMessageFor(_ => _.Email, string.Empty, new { @class = "label.error" })
                         </div>
                     </div>
                     <div class="form-group form-group-default">
                         <label>Senha</label>
                         <div class="controls">
-                            @Html.PasswordFor(_ => _.Password, new { @class = "form-control", required = true })
+                            @Html.PasswordFor(_ => _.Password, new { @class = "form-control" })
                             @Html.ValidationMessageFor(_ => _.Password, string.Empty, new { @class = "label.error" })
                         </div>
                     </div>
@@ -116,8 +118,26 @@
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
     <script src="~/js/pages/pages.js"></script>
     <script>
-        $(function () {
-            $('#form-login').validate()
+        $(function() {
+            $("#form-login").validate({
+                rules: {
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    password: {
+                        required: true
+                    }
+                },
+                messages: {
+                    email: "E-mail obrigatótio",
+                    password: "Senha obrigatória",
+                    password: {
+                        required: "Senha obrigatória",
+                        minlength: "Deve conter ao menos 6 caracteres"
+                    }
+                }
+            });
         })
     </script>
 </body>
