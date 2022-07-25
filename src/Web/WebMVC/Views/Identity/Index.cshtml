@@ -61,8 +61,8 @@
                     <div class="form-group form-group-default">
                         <label>E-mail</label>
                         <div class="controls">
-                            @Html.TextBoxFor(_ => _.Email, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(_ => _.Email, string.Empty, new { @class = "label.error" })
+                            @Html.TextBoxFor(_ => _.Email, new { @class = "form-control", required = true })
+                            @Html.ValidationMessageFor(_ => _.Email, string.Empty, new { @class = "label.error", required = true })
                         </div>
                     </div>
                     <div class="form-group form-group-default">
@@ -115,24 +115,24 @@
     <script src="~/js/select2/select2.full.min.js" type="text/javascript"></script>
     <script src="~/js/classie/classie.js" type="text/javascript"></script>
     <script src="~/js/jquery-validation/jquery.validate.min.js" type="text/javascript"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/js/pages/pages.js"></script>
     <script>
         $(function() {
             $("#form-login").validate({
                 rules: {
-                    email: {
+                    Email: {
                         required: true,
-                        email: true
+                        Email: true
                     },
-                    password: {
+                    Password: {
                         required: true
                     }
                 },
                 messages: {
-                    email: "E-mail obrigatótio",
-                    password: "Senha obrigatória",
-                    password: {
+                    Email: "E-mail obrigatótio",
+                    Password: "Senha obrigatória",
+                    Password: {
                         required: "Senha obrigatória",
                         minlength: "Deve conter ao menos 6 caracteres"
                     }
