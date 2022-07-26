@@ -103,6 +103,8 @@ function alljs(cb) {
 		.pipe(dest('wwwroot/js/classie/'));
 	src('node_modules/jquery-validation/dist/*.js')
 		.pipe(dest('wwwroot/js/jquery-validation/'));
+	src('node_modules/feather-icons/dist/**/*')
+		.pipe(dest('wwwroot/js/feather-icons/'));
 		
 	cb();
 }
