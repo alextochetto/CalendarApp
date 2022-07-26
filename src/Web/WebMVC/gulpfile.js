@@ -87,6 +87,8 @@ function alljs(cb) {
     	.pipe(dest('wwwroot/js/bootstrap/'));
 	src('node_modules/bootstrap/dist/css/bootstrap.min.css')
 		.pipe(dest('wwwroot/css/bootstrap/'));
+	src('node_modules/bootstrap/dist/css/bootstrap.min.css.map')
+		.pipe(dest('wwwroot/css/bootstrap/'));
 	src('node_modules/select2/dist/js/*.js')
 		.pipe(dest('wwwroot/js/select2/'));
 	src('node_modules/select2/dist/css/*.css')
