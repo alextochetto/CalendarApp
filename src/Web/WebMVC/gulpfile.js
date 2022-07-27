@@ -105,7 +105,11 @@ function alljs(cb) {
 		.pipe(dest('wwwroot/js/jquery-validation/'));
 	src('node_modules/feather-icons/dist/**/*')
 		.pipe(dest('wwwroot/js/feather-icons/'));
-		
+	src('node_modules/moment/dist/**/*')
+		.pipe(dest('wwwroot/js/moment/'));
+	src('node_modules/interactjs/dist/*.js')
+		.pipe(dest('wwwroot/js/interactjs/'));
+	
 	cb();
 }
 
