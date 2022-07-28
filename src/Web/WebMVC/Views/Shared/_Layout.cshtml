@@ -31,10 +31,22 @@
         <div class="sidebar-menu">
             <ul class="menu-items">
                 <li class="m-t-10">
-                    <a asp-controller="Home" asp-action="Dashboard" class="detailed">
-                        <span class="title">Dashboard</span>
-                        <span class="details">12 New Updates</span>
-                    </a>
+                    @{
+                        if ((bool)ViewData["Dashboard"] == true)
+                        {
+                            <a href="#" class="detailed">
+                                <span class="title">Dashboard</span>
+                                <span class="details">12 New Updates</span>
+                            </a>
+                        }
+                        else
+                        {
+                            <a asp-controller="Home" asp-action="Dashboard" class="detailed">
+                                <span class="title">Dashboard</span>
+                                <span class="details">12 New Updates</span>
+                            </a>
+                        }
+                    }
                     <span class="icon-thumbnail"><i data-feather="shield"></i></span>
                 </li>
                 <li class="m-t-10">
