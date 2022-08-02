@@ -24,30 +24,10 @@
     <link href="~/css/pages/dashboard.widgets.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <body class="fixed-header dashboard menu-pin">
-    <nav class="page-sidebar" data-pages="sidebar">
-        <div class="sidebar-header">
-            <img src="assets/img/logo.png" alt="logo" class="brand" data-src="assets/img/logo.png" data-src-retina="assets/img/logo_2x.png" width="78" height="22">
-        </div>
-        <div class="sidebar-menu">
-            <ul class="menu-items">
-                <li class="m-t-10">
-                    <a asp-controller="Home" asp-action="Dashboard" class="detailed">
-                        <span class="title">Dashboard</span>
-                        <span class="details">12 New Updates</span>
-                    </a>
-                    <span class="icon-thumbnail"><i data-feather="shield"></i></span>
-                </li>
-                <li class="m-t-10">
-                    <a asp-controller="Home" asp-action="Calendar" class="detailed">
-                        <span class="title">Calendar</span>
-                        <span class="details">6 New appointments</span>
-                    </a>
-                    <span class="icon-thumbnail"><i data-feather="calendar"></i></span>
-                </li>
-            </ul>
-            <div class="clearfix"></div>
-        </div>
-    </nav>
+    
+
+    <partial name="_LayoutSidebar" />
+
     <div class="page-container ">
         <div class="header ">
             <a href="#" class="btn-link toggle-sidebar d-lg-none  pg-icon btn-icon-link" data-toggle="sidebar">
