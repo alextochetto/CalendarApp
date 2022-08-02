@@ -62,9 +62,9 @@ var clean = require('gulp-clean');
 
 function clear(cb) {
 	src('wwwroot/js/bootstrap/*.js')
-    	.pipe(clean());
+		.pipe(clean());
 	src('wwwroot/css/bootstrap/*.css')
-    	.pipe(clean());
+		.pipe(clean());
 	src('wwwroot/js/select2/*.css')
 		.pipe(clean());
 	src('wwwroot/css/select2/*.css')
@@ -78,13 +78,13 @@ function clear(cb) {
 	src('wwwroot/js/classie/*.js')
 		.pipe(clean());
 	src('wwwroot/js/jquery-validation/*.js')
-	.pipe(clean());
+		.pipe(clean());
 	cb();
 }
 
 function alljs(cb) {
 	src('node_modules/bootstrap/dist/js/bootstrap.min.js')
-    	.pipe(dest('wwwroot/js/bootstrap/'));
+		.pipe(dest('wwwroot/js/bootstrap/'));
 	src('node_modules/bootstrap/dist/css/bootstrap.min.css')
 		.pipe(dest('wwwroot/css/bootstrap/'));
 	src('node_modules/bootstrap/dist/css/bootstrap.min.css.map')
@@ -109,8 +109,8 @@ function alljs(cb) {
 		.pipe(dest('wwwroot/js/moment/'));
 	src('node_modules/interactjs/dist/*.js')
 		.pipe(dest('wwwroot/js/interactjs/'));
-	
 	cb();
 }
 
 exports.default = series(clear, alljs);
+
