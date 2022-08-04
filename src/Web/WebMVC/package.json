@@ -2,7 +2,6 @@
   "name": "powercalendar",
   "version": "1.0.0",
   "description": "This is a web project for medical calendar and schedule",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -33,6 +32,7 @@
     "gulp-clean": "^0.4.0",
     "gulp-cli": "^2.3.0",
     "gulp-less": "^5.0.0",
-    "gulp-minify-css": "^1.2.4"
+    "gulp-minify-css": "^1.2.4",
+    "typescript": "^4.7.4"
   }
 }
