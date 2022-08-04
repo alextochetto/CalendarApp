@@ -10,7 +10,10 @@
     'use strict';
 
     $(document).ready(function() {
-
+        const calendario = new Calendar();
+        calendario.Passed();
+        calendario.Log();
+        calendario.GetEvents();
         var selectedEvent;
         $('#myCalendar').pagescalendar({
             //Loading Dummy EVENTS for demo Purposes, you can feed the events attribute from 
