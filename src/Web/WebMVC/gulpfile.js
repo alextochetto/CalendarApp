@@ -109,7 +109,6 @@ function alljs(cb) {
 		.pipe(dest('wwwroot/js/moment/'));
 	src('node_modules/interactjs/dist/*.js')
 		.pipe(dest('wwwroot/js/interactjs/'));
-
 	cb();
 }
 
