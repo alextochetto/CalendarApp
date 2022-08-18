@@ -4,18 +4,71 @@
  * We have demonstrated a few function that are useful in creating
  * a custom calendar. Please refer docs for more information
  * ============================================================ */
+async function getEvents() {
+    const calendar = new Calendar();
+    calendar.Passed();
+    const eventsJson = await calendar.GetEvents();
+    const events = calendar.Deserialize(eventsJson);
+    //console.log(events);
+
+    var selectedEvent;
+    $('#myCalendar').pagescalendar({
+        //Loading Dummy EVENTS for demo Purposes, you can feed the events attribute from 
+        //Web Service
+        events: events,
+        view: "day",
+        onViewRenderComplete: function () {
+            //You can Do a Simple AJAX here and update 
+        },
+        onEventClick: function (event) {
+            //Open Pages Custom Quick View
+            if (!$('#calendar-event').hasClass('open'))
+                $('#calendar-event').addClass('open');
+
+
+            selectedEvent = event;
+            setEventDetailsToForm(selectedEvent);
+        },
+        onEventDragComplete: function (event) {
+            selectedEvent = event;
+            setEventDetailsToForm(selectedEvent);
+
+        },
+        onEventResizeComplete: function (event) {
+            selectedEvent = event;
+            setEventDetailsToForm(selectedEvent);
+        },
+        onTimeSlotDblClick: function (timeSlot) {
+            $('#calendar-event').removeClass('open');
+            //Adding a new Event on Slot Double Click
+            var newEvent = {
+                title: 'my new event',
+                class: 'bg-success-lighter',
+                start: timeSlot.date,
+                end: moment(timeSlot.date).add(1, 'hour').format(),
+                allDay: false,
+                other: {
+                    //You can have your custom list of attributes here
+                    note: 'test'
+                }
+            };
+            selectedEvent = newEvent;
+            $('#myCalendar').pagescalendar('addEvent', newEvent);
+            setEventDetailsToForm(selectedEvent);
+        }
+    });
+}
+
+
 
 (function($) {
 
     'use strict';
 
-    $(document).ready(function() {
-        const calendario = new Calendar();
-        calendario.Passed();
-        calendario.Log();
-        calendario.GetEvents();
+    $(document).ready(function () {
+        getEvents();
         var selectedEvent;
-        $('#myCalendar').pagescalendar({
+        $('#myCalendar-old').pagescalendar({
             //Loading Dummy EVENTS for demo Purposes, you can feed the events attribute from 
             //Web Service
             events: [{
