@@ -17,6 +17,7 @@ async function getEvents() {
         //Web Service
         events: events,
         view: "day",
+        locale: 'pt-BR',
         onViewRenderComplete: function () {
             //You can Do a Simple AJAX here and update 
         },
