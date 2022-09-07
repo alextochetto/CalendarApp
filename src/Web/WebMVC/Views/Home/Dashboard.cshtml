@@ -1,4 +1,6 @@
-﻿@{
+﻿
+
+@{
     ViewData["Title"] = "Dashboard";
     ViewData["Dashboard"] = true;
 }
@@ -15,3 +17,16 @@
 </div>
 <div class="container-fluid p-l-25 p-r-25 p-t-0 p-b-25 sm-padding-10">
 </div>
+
+<partial name="AppointmentRegisterPartial" />
+<partial name="AttendanceRegisterPartial" />
+<partial name="EmployeeRegisterPartial" />
+<partial name="PatientRegisterPartial" />
+
+@section scripts {
+<script src="~/js/ts/Calendar.js"></script>
+<script src="~/js/core/appointment.js"></script>
+<script src="~/js/core/attendance.js"></script>
+<script src="~/js/core/employee.js"></script>
+<script src="~/js/core/patient.js"></script>
+}
