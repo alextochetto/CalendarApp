@@ -8,66 +8,26 @@
                 <div class="container-xs-height full-height">
                     <div class="row-xs-height">
                         <div class="modal-body p-t-50">
-                            <div class="col-lg-12 p-0">
-                                <div class="form-group">
-                                    <div class="input-group date col-lg-6 p-0">
+                            <div class="modal-body p-0">
+                                <div class="col-lg-12 p-0">
+                                    <div class="form-group">
+                                        <label>Data</label>
                                         <input type="text" class="form-control" id="modalAppointmentRegisterDatepicker">
-                                        <div class="input-group-append ">
-                                            <span class="input-group-text"><i class="pg-icon">calendar</i></span>
-                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Paciente</label>
+                                        <select class="full-width" data-init-plugin="select2" data-select2-id="modalAppointmentRegisterPatientData" id="modalAppointmentRegisterPatient">
+                                            @*<optgroup label="A">
+                                            <option value="AT">Alex Tochetto</option>
+                                            <option value="A">Antonio</option>
+                                            </optgroup>
+                                            <optgroup label="B">
+                                            <option value="B">Bibiana</option>
+                                            <option value="B">Belinha</option>
+                                            </optgroup>*@
+                                        </select>
                                     </div>
                                 </div>
-
-                                <form role="form">
-
-                                    <div class="form-group form-group-default ">
-                                        <label>Project</label>
-                                        <input type="email" class="form-control" required>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group form-group-default">
-                                                <label>First name</label>
-                                                <input type="text" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group form-group-default">
-                                                <label>Last name</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group form-group-default">
-                                        <label>Password</label>
-                                        <input type="password" class="form-control" required>
-                                    </div>
-
-                                    <div class="form-group form-group-default">
-                                        <label>Placeholder</label>
-                                        <input type="email" class="form-control" placeholder="ex: some@example.com" required>
-                                    </div>
-
-                                    <div class="form-group form-group-default disabled">
-                                        <label>Disabled</label>
-                                        <input type="email" class="form-control" value="You can put anything here" disabled>
-                                    </div>
-                                </form>
-                                <div class="row g-3">
-                                    <div class="col-sm-7">
-                                        <input type="text" class="form-control" placeholder="City" aria-label="City">
-                                    </div>
-                                    <div class="col-sm">
-                                        <input type="text" class="form-control" placeholder="State" aria-label="State">
-                                    </div>
-                                    <div class="col-sm">
-                                        <input type="text" class="form-control" placeholder="Zip" aria-label="Zip">
-                                    </div>
-                                </div>
-
-
                             </div>
                             <h5 class="text-primary ">Before you <span class="semi-bold">proceed</span>, you have to login to make the necessary changes</h5>
                             <br>
